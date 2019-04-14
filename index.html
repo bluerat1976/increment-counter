@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Increment counter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" media="screen" href="index.css" />
+
+
+</head>
+
+<body>
+
+  <button id='button' value="statr counter">Start count</button>
+  <div id='result'></div>
+  <div id='prev'></div>
+
+  <script>
+
+    var currentCount = (parseInt(prompt('input number')));
+    function makeCounter() {
+
+
+      // возвращаемся к функции
+      function counter() {
+        return currentCount++;
+      }
+      return counter;
+    }
+
+    var counter = makeCounter();
+
+    var button = document.getElementById('button');
+    button.addEventListener('click', func);
+
+    function func() {
+      var div = document.getElementById('result');
+
+      div.innerHTML = counter();
+    }
+
+  </script>
+</body>
+
+</html>
